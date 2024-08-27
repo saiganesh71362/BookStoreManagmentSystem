@@ -58,7 +58,7 @@ public class CustomerController {
 		return new ResponseEntity<>(createNewCustomer, HttpStatus.CREATED);
 	}
 
-	@PutMapping("/updateCustomer/{id}")
+	@PutMapping("/updateCustomerById/{id}")
 	public ResponseEntity<Customer> updateCustomerById(@PathVariable Long id, @RequestBody Customer customer)
 			throws CustomerUpdateException {
 		logger.info("Received Request TO Update Customer With ID: {}", id);

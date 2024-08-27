@@ -34,7 +34,7 @@ public class BookController {
 		this.bookServiceImpl = bookServiceImpl;
 	}
 
-	@GetMapping("/allBooks")
+	@GetMapping("/getAllBooks")
 	public ResponseEntity<List<Book>> getAllBooks() {
 		logger.info("Received Request To Get All Books");
 		List<Book> allBooks = bookServiceImpl.getAllBooks();
@@ -58,7 +58,7 @@ public class BookController {
 		return new ResponseEntity<>(createNewBook, HttpStatus.CREATED);
 	}
 
-	@PutMapping("/updateBook/{id}")
+	@PutMapping("/updateBookById/{id}")
 	public ResponseEntity<Book> updateBookById(@PathVariable Long id, @RequestBody Book book)
 			throws BookUpdateException {
 		logger.info("Received Request To Update Category With ID: {}", id);
